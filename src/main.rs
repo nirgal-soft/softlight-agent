@@ -1,4 +1,4 @@
-pub mod browser_constroller;
+pub mod browser;
 pub mod execution_engine;
 pub mod models;
 pub mod output;
