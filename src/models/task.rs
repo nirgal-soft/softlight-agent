@@ -8,7 +8,7 @@ use crate::models::step::Step;
 #[derive(Debug, Deserialize)]
 pub struct Task{
   #[serde(flatten)]
-  pub task: TaskDefinition,
+  pub task_def: TaskDefinition,
   pub metadata: Option<Metadata>,
 }
 

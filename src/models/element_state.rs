@@ -1,3 +1,4 @@
+use std::fmt;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize, Clone)]
@@ -7,4 +8,15 @@ pub enum ElementState{
   Hidden,
   Enabled,
   Disabled,
+}
+
+impl fmt::Display for ElementState{
+  fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result{
+    match self{
+      ElementState::Visible => write!(f, "visible"),
+      ElementState::Hidden => write!(f, "hidden"),
+      ElementState::Enabled => write!(f, "enabled"),
+      ElementState::Disabled => write!(f, "disabled"),
+    }
+  }
 }
