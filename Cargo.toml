@@ -1,0 +1,13 @@
+[package]
+name = "softlight-agent"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+chromiumoxide = { version = "0.7.0", default-features = false, features = ["tokio-runtime"] }
+image = "0.25.8"
+serde = "1.0.228"
+serde_json = "1.0.145"
+serde_yaml = "0.9.34"
+tokio = "1.48.0"
