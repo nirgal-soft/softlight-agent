@@ -1,11 +1,7 @@
 use std::time::{Duration, Instant};
 use anyhow::{Context, Result};
-use chromiumoxide::{
-  Page,
-  page::ScreenshotParams,
-};
+use chromiumoxide::Page;
 use chrono::Utc;
-use serde::Serialize;
 use tokio::time::sleep;
 use crate::browser::{
   browser_constroller::BrowserController,
@@ -16,16 +12,13 @@ use crate::models::{
   captured_state::CapturedState,
   element_state::ElementState,
   execution_result::ExecutionResult,
-  metadata::Metadata,
   scroll_direction::ScrollDirection,
   step::Step,
   task::Task,
-  viewport_info::ViewportInfo,
   wait_condition::WaitCondition,
 };
 use crate::state_capture::{
   CaptureOptions,
-  capture_screenshot, 
   extract_viewport_info,
   extract_page_metadata,
   capture_settled,

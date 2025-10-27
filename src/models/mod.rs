@@ -1,10 +1,10 @@
 pub mod action;
 pub mod captured_state;
 pub mod cookie;
+pub mod dataset_index;
 pub mod element_state;
 pub mod execution_result;
 pub mod metadata;
-pub mod page_metadata;
 pub mod scroll_direction;
 pub mod setup;
 pub mod step;

@@ -1,6 +1,6 @@
 use serde::Serialize;
 use crate::models::{
-  page_metadata::PageMetadata,
+  metadata::PageMetadata,
   viewport_info::ViewportInfo
 };
 

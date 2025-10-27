@@ -31,3 +31,13 @@ pub struct TaskOutput{
   pub states: Vec<CapturedState>,
   pub metadata: Option<Metadata>,
 }
+
+#[derive(Debug, Serialize)]
+pub struct TaskSummary{
+  pub task_id: String,
+  pub app: String,
+  pub description: String,
+  pub success: bool,
+  pub state_count: usize,
+  pub path: String,
+}

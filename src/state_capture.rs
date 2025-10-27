@@ -8,7 +8,7 @@ use chromiumoxide::{
 use serde::Serialize;
 use tokio::time::sleep;
 use crate::models::{
-  page_metadata::PageMetadata,
+  metadata::PageMetadata,
   viewport_info::ViewportInfo
 };
 
