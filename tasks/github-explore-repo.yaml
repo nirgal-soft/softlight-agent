@@ -1,0 +1,94 @@
+task:
+  id: "github-explore-rust"
+  app: "github"
+  description: "Exploring a GitHub repository - navigation and UI states"
+  base_url: "https://github.com"
+  
+  steps:
+    - name: "Repository Home"
+      description: "Main repository view with README and file tree"
+      action:
+        type: "navigate"
+        url: "/rust-lang/rust"
+      wait:
+        type: "selector"
+        value: "article[itemprop='text']"
+        timeout_ms: 5000
+        visible: true
+      capture: true
+    
+    - name: "Scroll to Repository Stats"
+      description: "View showing stars, forks, and watchers"
+      action:
+        type: "scroll"
+        direction: "down"
+        amount: 300
+      wait:
+        type: "duration"
+        ms: 500
+      capture: true
+
+    - name: "Scroll back to top"
+      description: "Return to top for navigation"
+      action:
+        type: "scroll"
+        direction: "up"
+        amount: 300
+      wait:
+        type: "duration"
+        ms: 300
+      capture: false
+
+    - name: "Navigate to Issues Tab"
+      description: "Going to Issues page"
+      action:
+        type: "navigate"
+        url: "/rust-lang/rust/issues"
+      wait:
+        type: "network_idle"
+        timeout_ms: 5000
+      capture: true
+    
+    - name: "Issues List View"
+      description: "List of open issues with filters"
+      action:
+        type: "wait"
+        duration_ms: 1000
+      capture: true
+    
+    - name: "Navigate to Pull Requests"
+      description: "Switch to PR tab"
+      action:
+        type: "navigate"
+        url: "/rust-lang/rust/pulls"
+      wait:
+        type: "network_idle"
+        timeout_ms: 5000
+      capture: true
+    
+    - name: "Pull Requests List"
+      description: "List of pull requests with status indicators"
+      action:
+        type: "wait"
+        duration_ms: 1000
+      capture: true
+
+metadata:
+  captured_elements:
+    - "Repository header with stats"
+    - "README content"
+    - "Issues navigation tab"
+    - "Issues list with filters"
+    - "Filter dropdown menu (no URL)"
+    - "Pull requests tab"
+    - "PR list view"
+  ui_components:
+    - "navigation tabs"
+    - "dropdown menu"
+    - "list views"
+    - "filter controls"
+  tags:
+    - "public-site"
+    - "no-auth-required"
+    - "navigation-flow"
+  notes: "Demonstrates navigation between tabs and dropdown states without authentication"

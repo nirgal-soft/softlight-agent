@@ -1,15 +1,15 @@
 use anyhow::Result;
 
 mod browser;
-mod executor;
 mod state_capture;
+pub mod executor;
 pub mod models;
 pub mod output;
 pub mod task_definition;
 
-use crate::executor::TaskExecutor;
-use crate::models::execution_result::ExecutionResult;
-use crate::models::task::Task;
+use executor::TaskExecutor;
+use models::execution_result::ExecutionResult;
+use models::task::Task;
 
 pub struct CaptureEngine{
   viewport_width: u32,

@@ -1,6 +1,5 @@
 use std::path::{Path, PathBuf};
 use anyhow::{Context, Result};
-use serde::Serialize;
 use crate::models::dataset_index::DatasetIndex;
 use crate::models::execution_result::ExecutionResult;
 use crate::models::metadata::{StateMetadata, TaskMetadata};

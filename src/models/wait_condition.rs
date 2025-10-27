@@ -1,7 +1,7 @@
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use crate::models::element_state::ElementState;
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Debug, Deserialize, Clone, Serialize)]
 #[serde(tag = "type", rename_all = "snake_case")]
 pub enum WaitCondition{
   Selector{

@@ -1,18 +1,17 @@
-use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use crate::models::captured_state::CapturedState;
 use crate::models::metadata::Metadata;
 use crate::models::setup::Setup;
 use crate::models::step::Step;
 
-#[derive(Debug, Deserialize)]
-pub struct Task{
-  #[serde(flatten)]
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Task {
+  #[serde(rename = "task")]
   pub task_def: TaskDefinition,
   pub metadata: Option<Metadata>,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct TaskDefinition{
   pub id: String,
   pub app: String,

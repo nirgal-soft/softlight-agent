@@ -5,10 +5,7 @@ use anyhow::{Context, Result};
 use chromiumoxide::{
   browser::{Browser, BrowserConfig},
   cdp::browser_protocol::{
-    network::{
-      Cookie as CdpCookie,
-      SetCookieParams,
-    },
+    network::SetCookieParams,
     emulation::SetDeviceMetricsOverrideParamsBuilder,
   },
   Page,

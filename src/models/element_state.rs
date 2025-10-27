@@ -1,7 +1,7 @@
 use std::fmt;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Debug, Deserialize, Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum ElementState{
   Visible,
